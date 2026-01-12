@@ -18,11 +18,11 @@ def generate_response( prompt :str, temperature:float =0.3)-> str:
         return e
     
 def setup_ui():
-    st.set_page_config("Math Mastermind!", layout= "centered")
-    st.title("Math problem solver")
+    st.set_page_config(page_title="Math Mastermind!", layout= "centered")
+    st.title("??? Math Genie")
     st.write("Solve problem and get higher precision!")
 
-    with st.expander("examplebreakdown"):
+    with st.expander("??? My example problems"):
         st.markdown("""
                    "calculas- derivative of sin90,"
                     geometry- find the area of triangle (0,0,3,4)
@@ -35,7 +35,7 @@ def setup_ui():
             with col1:
                 submit= st.form_submit_button("SOLVE!")
             with col2:
-                difficulty=st.selectbox("level", ["basic", "intermediate", "advance"],1)
+                difficulty=st.selectbox("Choose your level", ["Beginner", "Regular", "Challenging"], index=1)
     
     if "history" not in st.session_state:
         st.session_state.history=[]
